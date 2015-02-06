@@ -197,6 +197,7 @@ function  put_shb ( towrite ) {
 	  if ($row->nickname == $row2->name) {
 		  $id= $row2->id;
 		  $staat= $row2->staat!="" ? $row2->staat : "na.gif";
+                  $name=pathinfo($staat, PATHINFO_FILENAME);
 	  }
 	 }
     // Avatar prüfen und ggf. anzeigen
@@ -229,7 +230,7 @@ echo '
 	  <table width="90%" class="shoutboxname">
 		<tr>
 		  <td valign="middle" align="left">
-			<span class="shout_name"><img src="include/images/flags/'.$staat.'" border="0" alt="Land: '.$staat.'" title="Land: '.$staat.'" /> '.$nickname.'</span><span class="shout_datum">'.$time.'</span>
+			<span class="shout_name"><img src="include/images/flags/'.$staat.'" border="0" alt="Land: '.$staat.'" title="Land: '.$name.'" /> '.$nickname.'</span><span class="shout_datum">'.$time.'</span>
 		  </td>
 		 </tr>
 	  </table>
